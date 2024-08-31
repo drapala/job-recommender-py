@@ -1,0 +1,4 @@
+Flask==2.3.3           # Framework web
+pymysql==1.1.0         # Cliente MySQL
+pymongo==4.5.0         # Cliente MongoDB
+kafka-python==2.0.2    # Cliente Kafka para Python
