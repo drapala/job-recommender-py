@@ -1,7 +1,7 @@
 FROM python:3.9-slim
 
 # Install the MySQL client
-RUN apt-get update && apt-get install -y default-mysql-client
+RUN apt-get update && apt-get install -y default-mysql-client netcat-openbsd
 
 # Set the working directory
 WORKDIR /app
