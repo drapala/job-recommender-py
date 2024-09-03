@@ -1,8 +1,11 @@
 # Job Recommender Service - Python (Flask)
+# Multistack Real-Time Job Recommendation Engine
 
-This microservice is part of the "Multistack Real-Time Job Recommendation Engine" and is responsible for capturing user events, managing sessions, interacting with MySQL and MongoDB databases, and publishing recommendation events to Kafka.
+This repository contains a microservice that is part of the "Multistack Real-Time Job Recommendation Engine". This microservice is responsible for capturing user events, managing sessions, interacting with MySQL and MongoDB databases, and publishing recommendation events to Kafka.
 
 ## Requirements
+
+To run this project, you need the following:
 
 - Python 3.8+
 - Pip (Python package manager)
@@ -14,6 +17,8 @@ This microservice is part of the "Multistack Real-Time Job Recommendation Engine
 ## Configuration
 
 ### Local Setup Steps
+
+Follow these steps to set up the project locally:
 
 1. **Clone the repository:**
 
@@ -32,7 +37,7 @@ This microservice is part of the "Multistack Real-Time Job Recommendation Engine
 
 3. **Database configuration:**
 
-   Check the MySQL and MongoDB connection settings in the `app.py` file:
+   Update the MySQL and MongoDB connection settings in the `app.py` file:
 
    ```python
    MYSQL_HOST = 'localhost'
@@ -58,11 +63,28 @@ This microservice is part of the "Multistack Real-Time Job Recommendation Engine
 ## Usage
 
 - **API REST Endpoints:**
-  - `POST /generate_recommendations`: Generate job recommendations and publish to Kafka.
+  - `POST /users`: Create a new user.
+  - `GET /users/{user_id}`: Get a user by ID.
+  - `GET /users`: Get all users.
+  - `PUT /users/{user_id}`: Update a user by ID.
+  - `DELETE /users/{user_id}`: Delete a user by ID.
+  - `POST /generate_recommendations`: Generate job recommendations and publish them to Kafka.
+  - `POST /activity`: Create a new activity.
+  - `GET /activity/{activity_id}`: Get an activity by ID.
+  - `GET /activity`: Get all activities.
+  - `PUT /activity/{activity_id}`: Update an activity by ID.
+  - `DELETE /activity/{activity_id}`: Delete an activity by ID.
+  - `POST /job`: Create a new job.
+  - `GET /job/{job_id}`: Get a job by ID.
+  - `GET /job`: Get all jobs.
+  - `PUT /job/{job_id}`: Update a job by ID.
+  - `DELETE /job/{job_id}`: Delete a job by ID.
 
 ## Docker
 
 ### Building and Running with Docker
+
+To run the project using Docker, follow these steps:
 
 1. **Build the Docker image:**
 
@@ -78,8 +100,9 @@ This microservice is part of the "Multistack Real-Time Job Recommendation Engine
 
 ## Contributing
 
-Contributions are welcome! Please fork the repository and open a pull request with your improvements or fixes.
+Contributions are welcome! If you have any improvements or fixes, please fork the repository and open a pull request.
 
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
+
