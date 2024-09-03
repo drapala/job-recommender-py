@@ -30,6 +30,12 @@ def get_user(user_id):
         'created_at': user.created_at.isoformat()
     })
 
+@user_bp.route('/users', methods=['GET'])
+def get_users():
+    users = User.query.all()
+    users_list = [{'id': user.id, 'username': user.username, 'email': user.email} for user in users]
+    return jsonify(users_list)
+
 @user_bp.route('/users/<int:user_id>', methods=['PUT'])
 def update_user(user_id):
     user = User.query.get(user_id)

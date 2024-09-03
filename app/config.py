@@ -13,5 +13,5 @@ class Config:
     KAFKA_BROKER = os.getenv('KAFKA_BROKER', 'localhost:9092')
     KAFKA_TOPIC = os.getenv('KAFKA_TOPIC', 'job-recommendations')
 
-    SQLALCHEMY_DATABASE_URI = f"mysql+pymysql://{MYSQL_USER}:{MYSQL_PASSWORD}@{MYSQL_HOST}/{MYSQL_DB}"
+    SQLALCHEMY_DATABASE_URI = f"mysql+pymysql://{MYSQL_USER}:{MYSQL_PASSWORD}@{MYSQL_HOST}/{MYSQL_DB}?charset=utf8mb4"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
