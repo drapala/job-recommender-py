@@ -22,6 +22,7 @@ services:
       - mysql
       - mongo
       - kafka
+    command: ["/wait-for-mysql.sh", "mysql", "python", "run.py"]
 
   mysql:
     image: mysql:latest
@@ -48,10 +49,10 @@ services:
     image: mongo-express:latest
     container_name: mongo-express
     environment:
-      - ME_CONFIG_MONGODB_SERVER=mongo
-      - ME_CONFIG_MONGODB_PORT=27017
-      - ME_CONFIG_BASICAUTH_USERNAME=admin
-      - ME_CONFIG_BASICAUTH_PASSWORD=password
+      ME_CONFIG_MONGODB_SERVER: mongo
+      ME_CONFIG_MONGODB_PORT: 27017
+      ME_CONFIG_BASICAUTH_USERNAME: admin
+      ME_CONFIG_BASICAUTH_PASSWORD: password
     ports:
       - "8081:8081"
     depends_on:
